@@ -17,22 +17,22 @@
         
         h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; }
         
-        /* DGO GRADIENT TEXT LOGIC */
         .dgo-text { 
             background: var(--dgo-grad); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
             display: inline-block; 
-            line-height: 1.5 !important; /* FIXED: Prevents vertical cutting */
+            line-height: 1.5 !important; 
             padding-bottom: 0.1em;
         }
         .dgo-bg { background: var(--dgo-grad); }
 
-        /* MOOD BOARD WATERMARK BACKGROUND */
+        /* WATERMARK USING YOUR POSTER IMAGE */
         .watermark {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: url('Mood1.jpg') center center / cover no-repeat;
-            opacity: 0.07; z-index: -1; pointer-events: none;
+            background: url('poster.jpg') center center / cover no-repeat;
+            opacity: 0.08; /* Subtle faint look */
+            z-index: -1; pointer-events: none;
             filter: grayscale(100%);
         }
 
@@ -61,7 +61,7 @@
 </head>
 <body class="antialiased">
 
-    <!-- Faded Watermark using Mood1.jpg -->
+    <!-- YOUR POSTER AS WATERMARK -->
     <div class="watermark"></div>
 
     <!-- NAVIGATION -->
@@ -74,58 +74,22 @@
             <a href="#episodes">Episode Arc</a>
             <a href="#strategy">Strategy</a>
         </div>
-        <div class="text-[9px] font-black uppercase text-pink-500 border-l border-white/10 pl-4 italic tracking-tighter">Bible v9.0 FINAL</div>
+        <div class="text-[9px] font-black uppercase text-pink-500 border-l border-white/10 pl-4 italic">Bible v10.0 FINAL</div>
     </nav>
 
     <!-- HERO -->
     <header class="min-h-screen flex flex-col items-center justify-center text-center px-6">
         <p class="uppercase tracking-[0.8em] text-[10px] mb-2 font-black text-gray-500 italic">Prepared by Saurav Lamichhane / Raeela Films</p>
         <h1 class="hero-title dgo-text italic">SARARA... LIFE</h1>
-        <p class="text-xl md:text-2xl font-light text-gray-400 max-w-3xl leading-relaxed italic mt-4">
+        <p class="text-xl md:text-2xl font-light text-gray-400 max-w-3xl leading-relaxed mt-4 italic">
             "Five friends. One road. No rules."
         </p>
     </header>
 
-    <!-- MASTER CONCEPT -->
-    <section id="concept" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-20">
-            <div class="space-y-10">
-                <h2 class="text-5xl font-black uppercase italic tracking-tighter">The <span class="dgo-text">Master Concept.</span></h2>
-                <div class="glass p-8">
-                    <h3 class="text-white font-bold text-xl italic mb-4">Logline</h3>
-                    <p class="text-gray-400 leading-loose italic">
-                        Five young friends escape Kathmandu in a rugged old Land Rover, chasing music, freedom, and unresolved emotions on a road trip to Pokhara only to discover that the journey changes them more than the destination ever could.
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="glass p-6 text-center"><span class="dgo-text font-black text-xl italic">TRAVEL DRAMA</span><p class="text-[9px] uppercase text-gray-500 mt-1">Genre</p></div>
-                    <div class="glass p-6 text-center"><span class="dgo-text font-black text-xl italic">5 EPISODES</span><p class="text-[9px] uppercase text-gray-500 mt-1">Duration: 40m</p></div>
-                </div>
-            </div>
-            <div class="space-y-10">
-                <h3 class="text-xs font-black text-gray-500 uppercase tracking-[0.4em]">Core Pillars</h3>
-                <div class="flex gap-6">
-                    <div class="w-1.5 h-16 dgo-bg rounded-full"></div>
-                    <div>
-                        <h4 class="text-white font-bold mb-1 italic">Tone & Style</h4>
-                        <p class="text-sm text-gray-500 italic">Raw cinematic realism mixed with music-video aesthetics. Warm tones, dusty highways, and neon nights.</p>
-                    </div>
-                </div>
-                <div class="flex gap-6">
-                    <div class="w-1.5 h-16 dgo-bg rounded-full"></div>
-                    <div>
-                        <h4 class="text-white font-bold mb-1 italic">DGO Platform Impact</h4>
-                        <p class="text-sm text-gray-500 italic">Launches a youth-first identity, builds original IP, and drives massive subscription engagement.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CHARACTER BIBLE -->
     <section id="characters" class="py-32 bg-white/[0.01]">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-center text-4xl font-black mb-16 italic uppercase tracking-widest italic underline decoration-pink-500/20 underline-offset-8">Main <span class="dgo-text">Characters.</span></h2>
+            <h2 class="text-center text-4xl font-black mb-16 italic uppercase tracking-widest underline decoration-pink-500/20 underline-offset-8">Main <span class="dgo-text">Characters.</span></h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="glass p-8">
                     <h4 class="text-xl font-black mb-1 dgo-text italic">Sushant</h4>
@@ -139,22 +103,14 @@
                     <h4 class="text-xl font-black mb-1 dgo-text italic">Sushil</h4>
                     <p class="text-xs text-gray-400 italic leading-relaxed">DIY survivalist, protector. Represents raw masculinity, fearlessness, and loyalty.</p>
                 </div>
-                <div class="glass p-8">
-                    <h4 class="text-xl font-black mb-1 dgo-text italic">Manav</h4>
-                    <p class="text-xs text-gray-400 italic leading-relaxed">Lead vocalist in Pokhara. Emotionally distant, waiting for reconciliation.</p>
-                </div>
-                <div class="glass p-8">
-                    <h4 class="text-xl font-black mb-1 dgo-text italic">Divya</h4>
-                    <p class="text-xs text-gray-400 italic leading-relaxed">Mysterious solo traveler. Brings fresh perspective and emotional disruption to the group.</p>
-                </div>
             </div>
             <p class="mt-12 text-center text-gray-500 text-[10px] font-bold uppercase tracking-[0.4em] italic">
-                Potential Cast: Sushant Ghimire • Anna Sharma • Najir Hussain • Saugat Malla • Wangden
+                Potential Cast: Sushant Ghimire • Anna Sharma • Najir Hussain • Saugat Malla
             </p>
         </div>
     </section>
 
-    <!-- MOOD BOARD: STARTS FROM MOOD 1 -->
+    <!-- MOOD BOARD -->
     <section id="vibe" class="py-24">
         <div class="text-center mb-10">
             <h2 class="text-4xl font-black uppercase italic tracking-widest italic text-gray-400">Visual <span class="text-white">Mood Board.</span></h2>
@@ -174,7 +130,7 @@
         </div>
     </section>
 
-    <!-- STORY ARC SECTION -->
+    <!-- STORY ARC -->
     <section id="episodes" class="py-32 px-6 max-w-5xl mx-auto">
         <h2 class="text-center text-4xl font-black mb-20 italic uppercase tracking-widest italic underline decoration-pink-500/20 underline-offset-8">Episode <span class="dgo-text">Breakdown.</span></h2>
         <div class="space-y-12">
@@ -182,38 +138,14 @@
                 <span class="text-5xl font-black dgo-text italic">01</span>
                 <div>
                     <h4 class="text-xl font-bold italic mb-1 uppercase tracking-tighter">Departure</h4>
-                    <p class="text-xs text-gray-500 italic leading-relaxed">Band tensions & emotional cracks. Kathmandu escape. Song 1: Travel anthem (viral hook).</p>
-                </div>
-            </div>
-            <div class="glass p-10 flex gap-8 items-center border-l-4 border-l-pink-500">
-                <span class="text-5xl font-black dgo-text italic">03</span>
-                <div>
-                    <h4 class="text-xl font-bold italic mb-1 uppercase tracking-tighter">Chaos & Intimacy</h4>
-                    <p class="text-xs text-gray-500 italic leading-relaxed">Tensions rise. Village interactions, raw Nepal experience. Song 3: Emotional / romantic track.</p>
+                    <p class="text-xs text-gray-500 italic leading-relaxed">Band tensions & emotional cracks. Kathmandu escape. Song 1: Travel anthem.</p>
                 </div>
             </div>
             <div class="glass p-10 flex gap-8 items-center border-l-4 border-l-red-500">
                 <span class="text-5xl font-black dgo-text italic">05</span>
                 <div>
                     <h4 class="text-xl font-bold italic mb-1 uppercase tracking-tighter">The Night</h4>
-                    <p class="text-xs text-gray-500 italic leading-relaxed">Trance party climax. Performance resolution. Open-ended emotional closure. Song 5: High-energy finale.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- STRATEGY & MARKET -->
-    <section id="strategy" class="py-32 bg-white/[0.02] px-6">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-center text-4xl font-black mb-20 italic uppercase tracking-widest italic">Virality <span class="dgo-text">& ROI.</span></h2>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="glass p-10">
-                    <h4 class="text-white font-bold mb-4 italic uppercase tracking-widest text-xs">Music Strategy</h4>
-                    <p class="text-gray-500 text-sm italic leading-relaxed">5 Original songs designed for viral reach across TikTok/Reels. Indie + Acoustic + EDM fusion branding.</p>
-                </div>
-                <div class="glass p-10">
-                    <h4 class="text-white font-bold mb-4 italic uppercase tracking-widest text-xs">Target ROI</h4>
-                    <p class="text-gray-500 text-sm italic leading-relaxed">High relatability for Gen Z audience in Nepal and diaspora. Drives massive platform subscription growth.</p>
+                    <p class="text-xs text-gray-500 italic leading-relaxed">Trance party climax. Performance resolution. Open-ended emotional closure.</p>
                 </div>
             </div>
         </div>
@@ -223,25 +155,25 @@
     <footer class="py-40 px-6 text-center border-t border-white/5 bg-black">
         <img src="logo.png" alt="DGO Logo" class="h-12 mx-auto mb-10 opacity-30">
         
-        <!-- BOLD STATEMENT IN DGO GRADIENT -->
+        <!-- BOLD STATEMENT -->
         <div class="mb-12">
             <h2 class="text-6xl md:text-9xl font-black italic uppercase tracking-tighter dgo-text leading-[1.4] py-4">ROAD IS READY.</h2>
         </div>
 
-        <div class="inline-block border border-white/10 px-12 py-5 rounded-full text-[9px] font-black uppercase tracking-[0.5em] text-gray-500 italic mb-20">
+        <div class="inline-block border border-white/10 px-12 py-5 rounded-full text-[9px] font-bold uppercase tracking-[0.5em] text-gray-500 italic mb-20">
             Sarara, just go. • Confidential Production Proposal 2024
         </div>
         
         <p class="mt-20 text-[8px] uppercase tracking-[0.6em] text-gray-800 font-black italic">© 2024 DGO ORIGINALS • RAEELA FILMS</p>
     </footer>
 
-    <!-- SLIDER LOGIC - FIXED START AT MOOD 1 -->
+    <!-- SLIDER LOGIC -->
     <script>
         var swiper = new Swiper(".mySwiper", {
             effect: "coverflow",
             grabCursor: true, centeredSlides: true,
             slidesPerView: "auto",
-            initialSlide: 0, // FORCES START AT MOOD 1
+            initialSlide: 0, 
             loop: false, 
             coverflowEffect: {
                 rotate: 20, stretch: 0, depth: 100,
