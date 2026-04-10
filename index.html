@@ -5,114 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SARARA... LIFE | Executive Pitch</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <style>
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #050505; 
-            color: #ffffff; 
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-        /* DGO GRADIENT */
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #ffffff; scroll-behavior: smooth; overflow-x: hidden; }
         .dgo-text {
             background: linear-gradient(90deg, #A855F7 0%, #EC4899 50%, #EF4444 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
-
-        /* THE FIX FOR CUTTING TEXT: Added more padding and line-height */
+        /* FIX: Sarara name cutting fix */
         .hero-title {
-            font-size: clamp(3rem, 12vw, 8.5rem);
+            font-size: clamp(3rem, 12vw, 8rem);
             font-weight: 900;
-            line-height: 1.5 !important; 
-            padding: 40px 0 !important; 
+            line-height: 1.6 !important; 
+            padding: 50px 0 !important;
             display: block;
             text-transform: uppercase;
-            letter-spacing: -0.02em;
         }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
+        .glass { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; overflow: hidden; }
         img { width: 100%; height: 100%; object-fit: cover; }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <!-- NAVBAR -->
-    <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-lg border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <img src="logo.png" alt="DGO" class="h-6 md:h-8">
-            <div class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">
-                <a href="#vision" class="hover:text-white transition">Vision</a>
-                <a href="#vibe" class="hover:text-white transition">Mood Board</a>
-                <a href="#market" class="hover:text-white transition">Business</a>
-            </div>
-            <div class="text-[9px] font-bold text-gray-600 uppercase tracking-widest border-l border-white/10 pl-4">
-                Executive Pitch v1.5
-            </div>
+    <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-lg border-b border-white/5 px-6 py-4 flex justify-between items-center">
+        <img src="logo.png" alt="DGO" class="h-6 md:h-8">
+        <div class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-widest text-gray-500">
+            <a href="#vision">Vision</a>
+            <a href="#vibe">Mood Board</a>
+            <a href="#market">Business</a>
         </div>
+        <div class="text-[9px] font-bold text-gray-600 uppercase border-l border-white/10 pl-4">v1.6 FINAL</div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <header class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-        <p class="uppercase tracking-[0.6em] text-[9px] mb-2 font-bold text-gray-500">DGO Original Programming</p>
-        <!-- SARARA TITLE WITH EXTRA SPACE -->
-        <h1 class="hero-title dgo-text italic">
-            SARARA... LIFE
-        </h1>
-        <p class="text-lg md:text-xl font-light text-gray-400 max-w-xl mx-auto leading-relaxed">
-            A premium cinematic journey redefining <span class="text-white italic">Youth Identity</span>.
-        </p>
+    <header class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+        <h1 class="hero-title dgo-text italic">SARARA... LIFE</h1>
+        <p class="text-lg text-gray-400">A premium cinematic journey redefining <span class="text-white italic">Youth Identity</span>.</p>
     </header>
 
-    <!-- MOOD BOARD - UPDATED TO MATCH YOUR FILENAMES -->
+    <!-- MOOD BOARD SECTION -->
     <section id="vibe" class="py-24 px-6 max-w-7xl mx-auto">
-        <h2 class="text-center text-3xl font-extrabold mb-16 italic text-gray-500 uppercase tracking-widest">The <span class="text-white">Vibe</span></h2>
+        <h2 class="text-center text-3xl font-extrabold mb-16 italic text-gray-500 uppercase tracking-widest">Visual <span class="text-white">Mood Board</span></h2>
         
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <!-- Mood 1 -->
+            <!-- These names match your GitHub files exactly -->
             <div class="col-span-2 row-span-2 glass aspect-video md:aspect-auto">
-                <img src="Mood1.jpg" alt="Mood 1">
+                <img src="Mood1.jpg" alt="Final Mood 1">
             </div>
-            <!-- Mood 2 -->
             <div class="row-span-2 glass">
-                <img src="Mood2.jpg" alt="Mood 2">
+                <img src="Mood2.jpg" alt="Final Mood 2">
             </div>
-            <!-- Mood 3 -->
             <div class="glass h-40">
-                <img src="Mood3.jpg" alt="Mood 3">
+                <img src="Mood3.jpg" alt="Final Mood 3">
             </div>
-            <!-- Mood 4 -->
             <div class="glass h-40">
-                <img src="Mood4.jpg" alt="Mood 4">
+                <img src="Mood4.jpg" alt="Final Mood 4">
             </div>
-            <!-- Mood 5 & 6 -->
-            <div class="col-span-1 overflow-hidden rounded-2xl glass h-60">
-                <img src="Mood5.jpg" alt="Mood 5">
+            <div class="col-span-1 glass h-60">
+                <img src="Mood5.jpg" alt="Final Mood 5">
             </div>
-            <div class="col-span-1 overflow-hidden rounded-2xl glass h-60">
-                <img src="Mood6.jpg" alt="Mood 6">
+            <div class="col-span-1 glass h-60">
+                <img src="Mood6.jpg" alt="Final Mood 6">
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="py-32 px-6 text-center border-t border-white/5">
-        <img src="logo.png" alt="DGO" class="h-8 mx-auto mb-10 opacity-40">
-        <div class="inline-block border border-white/10 px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500">
-            Confidential Production Proposal 2024
-        </div>
-        <p class="mt-10 text-[8px] uppercase tracking-[0.5em] text-gray-800">© 2024 DGO ORIGINALS</p>
+        <img src="logo.png" alt="DGO" class="h-8 mx-auto mb-10 opacity-30">
+        <p class="text-[8px] uppercase tracking-[0.5em] text-gray-800">© 2024 DGO ORIGINALS</p>
     </footer>
 
 </body>
