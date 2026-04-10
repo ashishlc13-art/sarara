@@ -3,76 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SARARA... LIFE | Executive Pitch</title>
+    <title>SARARA... LIFE | Executive Pitch Deck</title>
+    
+    <!-- Frameworks -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Slider System (Swiper.js) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #ffffff; scroll-behavior: smooth; overflow-x: hidden; }
-        .dgo-text {
-            background: linear-gradient(90deg, #A855F7 0%, #EC4899 50%, #EF4444 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        :root { --dgo-grad: linear-gradient(90deg, #A855F7 0%, #EC4899 50%, #EF4444 100%); }
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #fff; scroll-behavior: smooth; }
+        
+        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; line-height: 1.2; }
+        .dgo-text { background: var(--dgo-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .dgo-bg { background: var(--dgo-grad); }
+
+        /* TRAVEL WATERMARK */
+        .watermark {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: url('watermark.jpg') center center / cover no-repeat;
+            opacity: 0.04; z-index: -1; pointer-events: none;
         }
-        /* FIX: Sarara name cutting fix */
+
+        /* SAFE ZONE HERO TITLE */
         .hero-title {
-            font-size: clamp(3rem, 12vw, 8rem);
+            font-size: clamp(3rem, 12vw, 8.5rem);
             font-weight: 900;
-            line-height: 1.6 !important; 
-            padding: 50px 0 !important;
-            display: block;
-            text-transform: uppercase;
+            padding: 40px 0;
+            letter-spacing: -0.02em;
         }
-        .glass { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; overflow: hidden; }
-        img { width: 100%; height: 100%; object-fit: cover; }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 24px;
+        }
+
+        /* SWIPER ZOOM MODAL */
+        .swiper { width: 100%; padding: 50px 0; }
+        .swiper-slide {
+            width: 320px; height: 480px; border-radius: 20px;
+            overflow: hidden; filter: brightness(0.5); transition: 0.5s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .swiper-slide-active { filter: brightness(1); transform: scale(1.1); border-color: #EC4899; }
+        .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
     </style>
 </head>
-<body>
+<body class="antialiased">
 
-    <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-lg border-b border-white/5 px-6 py-4 flex justify-between items-center">
-        <img src="logo.png" alt="DGO" class="h-6 md:h-8">
-        <div class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-widest text-gray-500">
-            <a href="#vision">Vision</a>
-            <a href="#vibe">Mood Board</a>
-            <a href="#market">Business</a>
+    <div class="watermark"></div>
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5 px-6 py-4 flex justify-between items-center">
+        <img src="logo.png" alt="DGO" class="h-8">
+        <div class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500">
+            <a href="#vision">Strategy</a>
+            <a href="#vibe">Vibe</a>
+            <a href="#details">Content</a>
+            <a href="#market">ROI</a>
         </div>
-        <div class="text-[9px] font-bold text-gray-600 uppercase border-l border-white/10 pl-4">v1.6 FINAL</div>
+        <div class="text-[9px] font-black uppercase text-pink-500 border-l border-white/10 pl-4">v3.0 Executive</div>
     </nav>
 
-    <header class="min-h-screen flex flex-col items-center justify-center text-center px-6">
-        <h1 class="hero-title dgo-text italic">SARARA... LIFE</h1>
-        <p class="text-lg text-gray-400">A premium cinematic journey redefining <span class="text-white italic">Youth Identity</span>.</p>
-    </header>
+    <!-- SECTION 1: HERO -->
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+        <p class="uppercase tracking-[0.8em] text-[10px] mb-2 font-bold text-gray-500 italic">DGO Original Proposal</p>
+        <h1 class="hero-title dgo-text italic uppercase">SARARA... LIFE</h1>
+        <p class="text-xl md:text-2xl font-light text-gray-400 max-w-2xl leading-relaxed">
+            Redefining the <span class="text-white font-bold italic underline decoration-pink-500">Modern Identity</span> through cinematic travel.
+        </p>
+    </section>
 
-    <!-- MOOD BOARD SECTION -->
-    <section id="vibe" class="py-24 px-6 max-w-7xl mx-auto">
-        <h2 class="text-center text-3xl font-extrabold mb-16 italic text-gray-500 uppercase tracking-widest">Visual <span class="text-white">Mood Board</span></h2>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <!-- These names match your GitHub files exactly -->
-            <div class="col-span-2 row-span-2 glass aspect-video md:aspect-auto">
-                <img src="Mood1.jpg" alt="Final Mood 1">
+    <!-- SECTION 2: THE STRATEGY -->
+    <section id="vision" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <h2 class="text-5xl font-extrabold uppercase italic">The <span class="dgo-text">Vision.</span></h2>
+                <p class="text-gray-400 text-lg leading-relaxed">
+                    By blending <span class="text-white">high-end cinematic realism</span> with music-video aesthetics, we establish DGO as the primary home for Gen-Z content. This is a visual manifesto for the youth who find freedom on the road.
+                </p>
+                <div class="flex gap-4">
+                    <div class="glass-card px-8 py-4">
+                        <span class="dgo-text font-black text-2xl italic">GEN-Z</span>
+                        <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold mt-1">Core Target</p>
+                    </div>
+                    <div class="glass-card px-8 py-4">
+                        <span class="dgo-text font-black text-2xl italic">5 EPS</span>
+                        <p class="text-[9px] uppercase tracking-widest text-gray-500 font-bold mt-1">Limited Series</p>
+                    </div>
+                </div>
             </div>
-            <div class="row-span-2 glass">
-                <img src="Mood2.jpg" alt="Final Mood 2">
-            </div>
-            <div class="glass h-40">
-                <img src="Mood3.jpg" alt="Final Mood 3">
-            </div>
-            <div class="glass h-40">
-                <img src="Mood4.jpg" alt="Final Mood 4">
-            </div>
-            <div class="col-span-1 glass h-60">
-                <img src="Mood5.jpg" alt="Final Mood 5">
-            </div>
-            <div class="col-span-1 glass h-60">
-                <img src="Mood6.jpg" alt="Final Mood 6">
+            <div class="glass-card p-10 space-y-8">
+                <div class="flex gap-6">
+                    <div class="w-1.5 h-12 dgo-bg rounded-full"></div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Aesthetic FOMO</h4>
+                        <p class="text-sm text-gray-500">High-end visuals that drive premium tier subscriptions and platform prestige.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <div class="w-1.5 h-12 dgo-bg rounded-full"></div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Music as a Growth Engine</h4>
+                        <p class="text-sm text-gray-500">Original soundtracks engineered for 24/7 dominance on TikTok and Instagram Reels.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-32 px-6 text-center border-t border-white/5">
-        <img src="logo.png" alt="DGO" class="h-8 mx-auto mb-10 opacity-30">
-        <p class="text-[8px] uppercase tracking-[0.5em] text-gray-800">© 2024 DGO ORIGINALS</p>
+    <!-- SECTION 3: MOOD BOARD (SLIDE MODEL) -->
+    <section id="vibe" class="py-24 bg-white/[0.01]">
+        <div class="text-center mb-10">
+            <h2 class="text-4xl font-extrabold uppercase italic">Visual <span class="text-white">Mood Board</span></h2>
+            <p class="text-gray-600 text-[10px] mt-2 uppercase tracking-[0.4em]">Swipe to Zoom into the Vibe</p>
+        </div>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="Mood1.jpg"></div>
+                <div class="swiper-slide"><img src="Mood2.jpg"></div>
+                <div class="swiper-slide"><img src="Mood3.jpg"></div>
+                <div class="swiper-slide"><img src="Mood4.jpg"></div>
+                <div class="swiper-slide"><img src="Mood5.jpg"></div>
+                <div class="swiper-slide"><img src="Mood6.jpg"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: STORY ARC -->
+    <section id="details" class="py-32 px-6 max-w-7xl mx-auto">
+        <h2 class="text-center text-4xl font-extrabold mb-20 italic uppercase tracking-widest">Story <span class="dgo-text">Arc.</span></h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-10">
+                <h4 class="text-xl font-black mb-4 dgo-text italic underline decoration-white/10">01. The Escape</h4>
+                <p class="text-gray-500 text-sm leading-relaxed">City life cracks as the group decides to leave behind the noise, hitting the highway as strangers to their old selves.</p>
+            </div>
+            <div class="glass-card p-10 border-pink-500/20 bg-pink-500/5 scale-105">
+                <h4 class="text-xl font-black mb-4 dgo-text italic underline decoration-white/10">03. The Transition</h4>
+                <p class="text-gray-500 text-sm leading-relaxed">Campfire music sessions. Tension builds as character friction meets the absolute silence of the open road.</p>
+            </div>
+            <div class="glass-card p-10">
+                <h4 class="text-xl font-black mb-4 dgo-text italic underline decoration-white/10">05. The Resolution</h4>
+                <p class="text-gray-500 text-sm leading-relaxed">The arrival. A high-energy trance party climax where old bonds break and a new freedom is discovered.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: MARKET ROI -->
+    <section id="market" class="py-32 px-6 max-w-5xl mx-auto text-center">
+        <h2 class="text-4xl font-extrabold mb-12 italic uppercase tracking-tighter">Market <span class="dgo-text">Potential.</span></h2>
+        <div class="grid md:grid-cols-2 gap-10 text-left">
+            <div class="glass-card p-8">
+                <h5 class="text-white font-black mb-3 uppercase text-[10px] tracking-widest opacity-50 italic">Global Diaspora</h5>
+                <p class="text-gray-400 text-sm">Content designed to pull in the massive youth diaspora market hungry for authentic identity stories.</p>
+            </div>
+            <div class="glass-card p-8">
+                <h5 class="text-white font-black mb-3 uppercase text-[10px] tracking-widest opacity-50 italic">Subscription Driver</h5>
+                <p class="text-gray-400 text-sm">"Aesthetic Storytelling" creates FOMO, driving new acquisitions for premium platform tiers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-40 px-6 text-center border-t border-white/5 bg-black">
+        <img src="logo.png" alt="DGO Logo" class="h-10 mx-auto mb-10 opacity-30">
+        <h2 class="text-5xl md:text-7xl font-black mb-10 italic uppercase tracking-tighter">THE ROAD IS READY.</h2>
+        <div class="inline-block border border-white/10 px-10 py-4 rounded-full text-[9px] font-bold uppercase tracking-[0.5em] text-gray-600">
+            SARARA... LIFE • Confidential Production Proposal 2024
+        </div>
+        <p class="mt-20 text-[8px] uppercase tracking-[0.6em] text-gray-800 font-black">© 2024 DGO ORIGINALS</p>
     </footer>
 
+    <!-- SLIDER LOGIC -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true, centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 20, stretch: 0, depth: 100,
+                modifier: 1, slideShadows: false,
+            },
+            pagination: { el: ".swiper-pagination" },
+            loop: true,
+            autoplay: { delay: 3500, disableOnInteraction: false },
+        });
+    </script>
 </body>
 </html>
