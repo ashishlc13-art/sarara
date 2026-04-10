@@ -3,106 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SARARA... LIFE | Executive Production Bible</title>
+    <title>SARARA... LIFE | Strategic Impact Report</title>
     
-    <!-- Professional Styling Frameworks -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
-    
-    <!-- Slider System (Swiper.js) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <style>
         :root { --dgo-grad: linear-gradient(90deg, #A855F7 0%, #EC4899 50%, #EF4444 100%); }
         body { font-family: 'Inter', sans-serif; background-color: #050505; color: #fff; scroll-behavior: smooth; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; line-height: 1.6 !important; }
         
-        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; line-height: 1.5 !important; }
-        .dgo-text { background: var(--dgo-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; padding-bottom: 0.1em; }
+        .dgo-text { background: var(--dgo-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; padding-bottom: 0.2em; }
         .dgo-bg { background: var(--dgo-grad); }
         .glass { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); border-radius: 24px; }
 
-        /* POSTER WATERMARK BACKGROUND */
+        /* POSTER WATERMARK */
         .watermark-bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: url('poster.jpg') center center / cover no-repeat;
-            opacity: 0.07; z-index: -1; pointer-events: none; filter: grayscale(100%);
+            opacity: 0.06; z-index: -1; pointer-events: none; filter: grayscale(100%);
         }
 
-        /* HERO TITLE - NO CLIPPING */
-        .hero-title { 
-            font-size: clamp(3rem, 12vw, 8.5rem); 
-            font-weight: 900; 
-            padding: 40px 0; 
-            letter-spacing: -0.02em; 
-            text-transform: uppercase; 
-        }
+        .hero-title { font-size: clamp(3rem, 12vw, 8.5rem); font-weight: 900; padding: 40px 0; letter-spacing: -0.02em; text-transform: uppercase; }
 
-        /* CALENDAR STYLES */
-        .cal-day { aspect-ratio: 1/1; border: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; font-size: 10px; border-radius: 8px; }
-        .cal-active { background: var(--dgo-grad); font-weight: bold; border: none; }
+        /* GANTT CHART STYLES */
+        .gantt-grid { display: grid; grid-template-columns: 150px repeat(10, 1fr); gap: 4px; }
+        .gantt-label { font-size: 10px; color: #666; text-transform: uppercase; padding: 10px; }
+        .gantt-bar { height: 35px; border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 9px; font-weight: bold; }
 
-        /* SWIPER (MOOD BOARD) */
+        /* SWIPER */
         .swiper { width: 100%; padding: 50px 0 80px 0; }
         .swiper-slide { width: 300px; height: 450px; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); filter: brightness(0.4); transition: 0.6s ease; }
         .swiper-slide-active { filter: brightness(1); transform: scale(1.1); border-color: #EC4899; box-shadow: 0 0 50px rgba(236, 72, 153, 0.3); }
-        .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
     </style>
 </head>
 <body class="antialiased">
 
     <div class="watermark-bg"></div>
 
-    <!-- STICKY NAVIGATION -->
+    <!-- NAVBAR -->
     <nav class="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-xl border-b border-white/5 px-6 py-4 flex justify-between items-center">
         <img src="logo.png" alt="DGO" class="h-8 md:h-10">
         <div class="hidden lg:flex space-x-8 text-[10px] font-black uppercase tracking-[0.3em] text-gray-500">
-            <a href="#concept">Concept</a>
+            <a href="#concept">Strategy</a>
             <a href="#vibe">Mood Board</a>
-            <a href="#timeline">Timeline</a>
-            <a href="#finance">Financials</a>
-            <a href="#market">Strategy</a>
+            <a href="#timeline">Gantt Chart</a>
+            <a href="#finance">Financial Model</a>
         </div>
-        <div class="text-[9px] font-black uppercase text-pink-500 border-l border-white/10 pl-4 italic tracking-tighter">Bible v13.0 FINAL</div>
+        <div class="text-[9px] font-black uppercase text-pink-500 border-l border-white/10 pl-4 italic tracking-tighter">Strategic Report v14.0</div>
     </nav>
 
-    <!-- 1. HERO SECTION -->
+    <!-- HERO -->
     <header class="min-h-screen flex flex-col items-center justify-center text-center px-6">
         <p class="uppercase tracking-[0.8em] text-[10px] mb-2 font-black text-gray-500 italic">Prepared by Saurav Lamichhane / Raeela Films</p>
         <h1 class="hero-title dgo-text italic">SARARA... LIFE</h1>
         <p class="text-xl md:text-2xl font-light text-gray-400 mt-4 italic">"Five friends. One road. No rules."</p>
     </header>
 
-    <!-- 2. MASTER CONCEPT -->
-    <section id="concept" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-20">
-            <div class="space-y-10">
-                <h2 class="text-5xl font-black uppercase italic tracking-tighter">The <span class="dgo-text">Concept.</span></h2>
-                <div class="glass p-8">
-                    <h3 class="text-white font-bold text-xl italic mb-4">Logline</h3>
-                    <p class="text-gray-400 leading-relaxed italic text-lg">
-                        Five young friends escape Kathmandu in a rugged old Land Rover, chasing music, freedom, and unresolved emotions on a road trip to Pokhara only to discover that the journey changes them more than the destination ever could.
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="glass p-6 text-center"><span class="dgo-text font-black text-xl italic">TRAVEL DRAMA</span><p class="text-[9px] uppercase text-gray-500 mt-2 font-bold">Musical Series</p></div>
-                    <div class="glass p-6 text-center"><span class="dgo-text font-black text-xl italic">5 EPISODES</span><p class="text-[9px] uppercase text-gray-500 mt-2 font-bold">40 Min Runtime</p></div>
-                </div>
-            </div>
-            <div class="space-y-8">
-                <h3 class="text-xs font-black text-gray-500 uppercase tracking-[0.4em]">Characters & Cast</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="glass p-5"><h5 class="dgo-text font-bold italic">Sushant</h5><p class="text-[10px] text-gray-500">The Musician (Guitarist)</p></div>
-                    <div class="glass p-5"><h5 class="dgo-text font-bold italic">Mona</h5><p class="text-[10px] text-gray-500">Magnetic Chaos (Sensual)</p></div>
-                    <div class="glass p-5"><h5 class="dgo-text font-bold italic">Sushil</h5><p class="text-[10px] text-gray-500">Survivalist (Raw Masculinity)</p></div>
-                    <div class="glass p-5"><h5 class="dgo-text font-bold italic">Divya</h5><p class="text-[10px] text-gray-500">The Mysterious Traveler</p></div>
-                </div>
-                <p class="text-[9px] text-gray-600 uppercase tracking-widest text-center italic">Cast: Sushant Ghimire, Anna Sharma, Najir Hussain, Saugat Malla, Wangden</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. MOOD BOARD (STARTS AT MOOD 1) -->
+    <!-- MOOD BOARD -->
     <section id="vibe" class="py-24 bg-white/[0.01]">
         <h2 class="text-center text-4xl font-black mb-10 italic uppercase tracking-widest text-gray-500">Visual <span class="text-white">Mood Board.</span></h2>
         <div class="swiper mySwiper">
@@ -118,79 +78,134 @@
         </div>
     </section>
 
-    <!-- 4. PRODUCTION TIMELINE (CALENDAR) -->
-    <section id="timeline" class="py-32 px-6 max-w-7xl mx-auto text-center">
-        <h2 class="text-4xl font-black mb-16 italic uppercase tracking-widest italic underline decoration-pink-500/20 underline-offset-8">Production <span class="dgo-text">Timeline 2026.</span></h2>
-        <div class="grid lg:grid-cols-3 gap-8">
-            <div class="glass p-8">
-                <h4 class="text-pink-500 font-black mb-6 uppercase tracking-widest text-xs">APRIL: Pre-Prod</h4>
-                <div class="grid grid-cols-7 gap-1">
-                    <div class="cal-day cal-active col-span-7 italic uppercase text-[8px]">Script Lock & Recce</div>
-                    <div class="cal-day col-span-7 border-white/5 italic text-[8px]">Casting & OST Development</div>
+    <!-- 3. PRODUCTION TIMELINE (GANTT CHART MODEL) -->
+    <section id="timeline" class="py-32 px-6 max-w-7xl mx-auto">
+        <h2 class="text-center text-4xl font-black mb-16 italic uppercase tracking-widest italic underline decoration-pink-500/20 underline-offset-8">Production <span class="dgo-text">Gantt Chart.</span></h2>
+        
+        <div class="glass p-8 overflow-x-auto">
+            <div class="min-w-[800px]">
+                <!-- Header -->
+                <div class="gantt-grid border-b border-white/10 mb-4">
+                    <div class="gantt-label">PHASES</div>
+                    <div class="gantt-label text-center border-l border-white/5 col-span-4">APRIL 2026</div>
+                    <div class="gantt-label text-center border-l border-white/5 col-span-4">MAY 2026</div>
+                    <div class="gantt-label text-center border-l border-white/5 col-span-2">JUNE 2026</div>
                 </div>
-            </div>
-            <div class="glass p-8 border-pink-500/30">
-                <h4 class="text-pink-500 font-black mb-6 uppercase tracking-widest text-xs">MAY: Production</h4>
-                <div class="grid grid-cols-7 gap-1">
-                    <div class="cal-day opacity-40 col-span-1 italic">W1</div><div class="cal-day col-span-1 border-white/10 text-[7px]">PREP</div>
-                    <div class="cal-day cal-active col-span-5 italic uppercase text-[8px]">Shoot & Principal Photography</div>
+
+                <!-- Phase 1 -->
+                <div class="gantt-grid mb-2">
+                    <div class="text-[10px] self-center font-bold text-gray-500 italic">PRE-PRODUCTION</div>
+                    <div class="col-span-5 gantt-bar dgo-bg text-white shadow-lg shadow-purple-500/20">SCRIPT, RECCE, CASTING, OST DEV</div>
                 </div>
-                <p class="text-[9px] text-gray-500 mt-6 italic font-bold">May 31: Episodic First Delivery</p>
-            </div>
-            <div class="glass p-8">
-                <h4 class="text-pink-500 font-black mb-6 uppercase tracking-widest text-xs">JUNE: Master Delivery</h4>
-                <div class="grid grid-cols-7 gap-1">
-                    <div class="cal-day cal-active col-span-2 italic">WEEK 1</div><div class="cal-day col-span-5 border-white/10 text-[8px] italic">Post-Prod Settlement</div>
+
+                <!-- Phase 2 -->
+                <div class="gantt-grid mb-2">
+                    <div class="text-[10px] self-center font-bold text-gray-500 italic">PRODUCTION PREP</div>
+                    <div class="col-start-5 col-span-1 gantt-bar bg-white/20 text-white italic">GEAR RIGGING</div>
                 </div>
-                <p class="text-[9px] text-gray-500 mt-6 italic font-bold">June 7: Final Series Masters</p>
+
+                <!-- Phase 3 -->
+                <div class="gantt-grid mb-2">
+                    <div class="text-[10px] self-center font-bold text-gray-500 italic">PRINCIPAL SHOOT</div>
+                    <div class="col-start-6 col-span-3 gantt-bar dgo-bg text-white shadow-lg shadow-pink-500/20 uppercase">PRINCIPAL PHOTOGRAPHY</div>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="gantt-grid mb-2">
+                    <div class="text-[10px] self-center font-bold text-gray-500 italic">POST & DELIVERY</div>
+                    <div class="col-start-8 col-span-3 gantt-bar border border-white/20 text-pink-500 italic">MASTERS & FINAL SETTLEMENT</div>
+                </div>
             </div>
         </div>
+        <p class="text-[10px] text-gray-600 mt-6 italic text-center uppercase tracking-widest">Target: Project completion by June 7, 2026</p>
     </section>
 
-    <!-- 5. FINANCIAL PLAN -->
-    <section id="finance" class="py-32 px-6 max-w-6xl mx-auto">
-        <h2 class="text-center text-4xl font-black mb-16 italic uppercase tracking-widest italic"><span class="dgo-text">NPR 40,00,000</span> Budget.</h2>
-        <div class="glass overflow-hidden mb-12">
-            <table class="w-full text-left text-sm">
-                <thead class="bg-white/5 uppercase text-[9px] font-bold text-gray-500">
-                    <tr><th class="px-8 py-5 italic tracking-widest">Category</th><th class="px-8 py-5 italic tracking-widest text-right">Investment (NPR)</th></tr>
-                </thead>
-                <tbody class="divide-y divide-white/5 italic">
-                    <tr><td class="px-8 py-4 font-bold">Logistics & Shooting (On-Road)</td><td class="px-8 py-4 text-right dgo-text font-black">15,00,000</td></tr>
-                    <tr><td class="px-8 py-4 font-bold">Crew, Direction & Post-Prod</td><td class="px-8 py-4 text-right dgo-text font-black">10,00,000</td></tr>
-                    <tr><td class="px-8 py-4 font-bold">Talent (Star-Cast & Fresh Faces)</td><td class="px-8 py-4 text-right dgo-text font-black">5,00,000</td></tr>
-                    <tr><td class="px-8 py-4 font-bold">Equipment, Drones & Car Rigging</td><td class="px-8 py-4 text-right dgo-text font-black">5,00,000</td></tr>
-                    <tr><td class="px-8 py-4 font-bold">Music Production & Rights</td><td class="px-8 py-4 text-right dgo-text font-black">5,00,000</td></tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="glass p-6 text-center"><p class="text-[9px] text-gray-500 uppercase italic mb-2">Advance (40%)</p><h5 class="font-black text-2xl italic">16,00,000</h5></div>
-            <div class="glass p-6 text-center border-pink-500/30"><p class="text-[9px] text-gray-500 uppercase italic mb-2">Shoot Milestone (40%)</p><h5 class="font-black text-2xl italic">16,00,000</h5></div>
-            <div class="glass p-6 text-center"><p class="text-[9px] text-gray-500 uppercase italic mb-2">Final Settlement (20%)</p><h5 class="font-black text-2xl italic">8,00,000</h5></div>
-        </div>
-    </section>
-
-    <!-- 6. MARKETING & TEAM -->
-    <section id="market" class="py-32 bg-white/[0.01] px-6">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20">
-            <div>
-                <h3 class="text-3xl font-black mb-10 italic uppercase dgo-text">Team Hierarchy.</h3>
-                <div class="space-y-4 text-sm text-gray-400 italic">
-                    <p><span class="text-white font-bold">Direction:</span> Director, Chief AD, Script Supervisor.</p>
-                    <p><span class="text-white font-bold">Cinematography:</span> DOP, Camera Op, Drones, 2 ACs.</p>
-                    <p><span class="text-white font-bold">Aesthetics:</span> 2 Art Directors, Stylist, 2 Makeup Artists.</p>
-                    <p><span class="text-white font-bold">Logistics:</span> 3 Managers, 3 Drivers, Catering Staff.</p>
+    <!-- 4. FINANCIAL MODEL (ADVANCED BREAKDOWN) -->
+    <section id="finance" class="py-32 bg-white/[0.01] px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="text-5xl font-black italic uppercase tracking-tighter">Financial <span class="dgo-text">Framework.</span></h2>
+                    <p class="text-gray-500 italic text-sm mt-2 uppercase tracking-widest">Total Estimated Budget: NPR 40,00,000</p>
+                </div>
+                <div class="glass px-10 py-6 border-pink-500/30">
+                    <p class="text-[10px] uppercase text-gray-600 font-black mb-1">Project Valuation</p>
+                    <span class="text-4xl font-black italic dgo-text">NPR 40L</span>
                 </div>
             </div>
-            <div class="glass p-10">
-                <h3 class="text-xl font-black mb-8 italic uppercase text-pink-500">Viral Strategy Ecosystem</h3>
-                <ul class="space-y-4 text-xs text-gray-500 italic">
-                    <li class="flex gap-4"><span>●</span> High-energy Reels/TikTok cuts for every song.</li>
-                    <li class="flex gap-4"><span>●</span> "Travel Log" Digital Posters & Social Content.</li>
-                    <li class="flex gap-4"><span>●</span> Behind-the-Scenes Documentary Shorts.</li>
-                    <li class="flex gap-4"><span>●</span> Episodic teasers engineered for re-watch value.</li>
-                </ul>
+
+            <!-- Dashboard Style Breakdown -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Item 1 -->
+                <div class="glass p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <h5 class="text-xs font-black text-gray-500 uppercase">Shooting & Logistics</h5>
+                        <span class="text-white font-bold italic">37.5%</span>
+                    </div>
+                    <h3 class="text-3xl font-black mb-2">15,00,000</h3>
+                    <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                        <div class="w-[37.5%] h-full dgo-bg"></div>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-4 italic leading-relaxed">Travel, Highway Logistics, Recce expenses, and Crew Catering.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="glass p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <h5 class="text-xs font-black text-gray-500 uppercase">Personnel & Talent</h5>
+                        <span class="text-white font-bold italic">25%</span>
+                    </div>
+                    <h3 class="text-3xl font-black mb-2">10,00,000</h3>
+                    <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                        <div class="w-[25%] h-full dgo-bg"></div>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-4 italic leading-relaxed">Direction, Cinematography, and High-Tier Talent (Actors).</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="glass p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <h5 class="text-xs font-black text-gray-500 uppercase">Tech & Gear</h5>
+                        <span class="text-white font-bold italic">12.5%</span>
+                    </div>
+                    <h3 class="text-3xl font-black mb-2">5,00,000</h3>
+                    <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                        <div class="w-[12.5%] h-full dgo-bg"></div>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-4 italic leading-relaxed">Drones, Car Rigging, High-end Camera Kits, and Lighting.</p>
+                </div>
+                <!-- Item 4 -->
+                <div class="glass p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <h5 class="text-xs font-black text-gray-500 uppercase">Post-Production</h5>
+                        <span class="text-white font-bold italic">12.5%</span>
+                    </div>
+                    <h3 class="text-3xl font-black mb-2">5,00,000</h3>
+                    <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                        <div class="w-[12.5%] h-full dgo-bg"></div>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-4 italic leading-relaxed">Offline/Online Edit, Color Grading, and Sound Engineering.</p>
+                </div>
+                <!-- Item 5 -->
+                <div class="glass p-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <h5 class="text-xs font-black text-gray-500 uppercase">Music Ecosystem</h5>
+                        <span class="text-white font-bold italic">12.5%</span>
+                    </div>
+                    <h3 class="text-3xl font-black mb-2">5,00,000</h3>
+                    <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                        <div class="w-[12.5%] h-full dgo-bg"></div>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-4 italic leading-relaxed">Music Licensing (Rights) and Professional Studio Recording.</p>
+                </div>
+            </div>
+
+            <!-- Cash Flow Milestones -->
+            <div class="mt-20">
+                <h4 class="text-center text-xs font-black text-gray-500 uppercase tracking-[0.4em] mb-10">Cash Flow Milestones</h4>
+                <div class="grid md:grid-cols-3 gap-1 shadow-2xl shadow-pink-500/10">
+                    <div class="glass p-10 text-center rounded-r-none border-r-white/5"><span class="text-[10px] text-gray-500 uppercase block mb-2">Pre-Prod Advance (40%)</span><h5 class="text-2xl font-black italic">16,00,000</h5></div>
+                    <div class="glass p-10 text-center rounded-none border-x-0 bg-pink-500/5"><span class="text-[10px] text-pink-500 uppercase block mb-2">Production Milestone (40%)</span><h5 class="text-2xl font-black italic text-white">16,00,000</h5></div>
+                    <div class="glass p-10 text-center rounded-l-none border-l-white/5"><span class="text-[10px] text-gray-500 uppercase block mb-2">Final Settlement (20%)</span><h5 class="text-2xl font-black italic">8,00,000</h5></div>
+                </div>
             </div>
         </div>
     </section>
@@ -198,7 +213,7 @@
     <!-- FOOTER -->
     <footer class="py-40 px-6 text-center border-t border-white/5 bg-black">
         <img src="logo.png" alt="DGO Logo" class="h-10 mx-auto mb-14 opacity-40">
-        <h2 class="text-6xl md:text-[9.5rem] font-black italic uppercase tracking-tighter dgo-text leading-[1.5] py-10 mb-14">ROAD IS READY.</h2>
+        <h2 class="text-6xl md:text-[9.5rem] font-black italic uppercase tracking-tighter dgo-text leading-[1.6] py-10 mb-14">ROAD IS READY.</h2>
         <div class="inline-block border border-white/10 px-12 py-5 rounded-full text-[10px] font-black uppercase tracking-[0.6em] text-gray-600 italic">Life doesn’t wait. Why should you?</div>
         <p class="mt-40 text-[8px] uppercase tracking-[0.6em] text-gray-800 font-black italic">© 2024 DGO ORIGINALS • RAEELA FILMS</p>
     </footer>
