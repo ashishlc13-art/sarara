@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SARARA... LIFE | Executive Pitch Deck</title>
+    <title>SARARA... LIFE | Executive Pitch Bible</title>
     
-    <!-- Professional Styling -->
+    <!-- Scripts & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Slider System (Swiper.js) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -17,36 +15,45 @@
         :root { --dgo-grad: linear-gradient(90deg, #A855F7 0%, #EC4899 50%, #EF4444 100%); }
         body { font-family: 'Inter', sans-serif; background-color: #050505; color: #fff; scroll-behavior: smooth; overflow-x: hidden; }
         
-        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; line-height: 1.3; }
-        .dgo-text { background: var(--dgo-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; padding-bottom: 0.1em; }
+        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; }
+        
+        /* DGO GRADIENT TEXT LOGIC */
+        .dgo-text { 
+            background: var(--dgo-grad); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            display: inline-block; 
+            line-height: 1.4 !important; /* FIXED: Prevents vertical cutting */
+        }
         .dgo-bg { background: var(--dgo-grad); }
 
-        /* THE WATERMARK */
+        /* TRAVEL WATERMARK */
         .watermark {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: url('watermark.jpg') center center / cover no-repeat;
             opacity: 0.05; z-index: -1; pointer-events: none;
         }
 
-        /* SAFE TITLE ZONE */
+        /* HERO TITLE - SAFE ZONE */
         .hero-title {
             font-size: clamp(3rem, 12vw, 8.5rem);
             font-weight: 900;
+            line-height: 1.5 !important; /* Added safety space */
             padding: 40px 0;
             letter-spacing: -0.02em;
             text-transform: uppercase;
         }
 
-        .glass { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); border-radius: 30px; }
+        .glass { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); border-radius: 24px; }
 
-        /* SWIPER SLIDE MODEL */
-        .swiper { width: 100%; padding: 50px 0; }
+        /* SLIDER SETTINGS */
+        .swiper { width: 100%; padding: 50px 0 100px 0; }
         .swiper-slide {
-            width: 320px; height: 480px; border-radius: 24px;
+            width: 300px; height: 450px; border-radius: 24px;
             overflow: hidden; border: 1px solid rgba(255,255,255,0.1);
-            filter: brightness(0.5); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            filter: brightness(0.4); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         }
-        .swiper-slide-active { filter: brightness(1); transform: scale(1.1); border-color: #EC4899; }
+        .swiper-slide-active { filter: brightness(1); transform: scale(1.1); border-color: #EC4899; box-shadow: 0 0 50px rgba(236, 72, 153, 0.3); }
         .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
     </style>
 </head>
@@ -54,95 +61,101 @@
 
     <div class="watermark"></div>
 
-    <!-- NAVBAR -->
+    <!-- NAVIGATION -->
     <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-xl border-b border-white/5 px-6 py-4 flex justify-between items-center">
         <img src="logo.png" alt="DGO" class="h-8 md:h-10">
         <div class="hidden lg:flex space-x-10 text-[10px] font-black uppercase tracking-[0.3em] text-gray-500">
-            <a href="#vision" class="hover:text-white transition">Strategy</a>
-            <a href="#characters" class="hover:text-white transition">Cast</a>
-            <a href="#vibe" class="hover:text-white transition">Vibe</a>
-            <a href="#arc" class="hover:text-white transition">Story</a>
-            <a href="#market" class="hover:text-white transition">ROI</a>
+            <a href="#concept">Concept</a>
+            <a href="#characters">Characters</a>
+            <a href="#vibe">Mood Board</a>
+            <a href="#episodes">Episode Arc</a>
+            <a href="#strategy">Strategy</a>
         </div>
-        <div class="text-[9px] font-black uppercase text-pink-500 border-l border-white/10 pl-4 tracking-tighter italic">Official Bible v5.0</div>
+        <div class="text-[9px] font-black uppercase text-pink-500 border-l border-white/10 pl-4 italic">Bible v8.0 FINAL</div>
     </nav>
 
-    <!-- 1. HERO SLIDE -->
-    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+    <!-- HERO -->
+    <header class="min-h-screen flex flex-col items-center justify-center text-center px-6">
         <p class="uppercase tracking-[0.8em] text-[10px] mb-2 font-black text-gray-500 italic">Prepared by Saurav Lamichhane / Raeela Films</p>
         <h1 class="hero-title dgo-text italic">SARARA... LIFE</h1>
-        <p class="text-xl md:text-2xl font-light text-gray-400 max-w-3xl leading-relaxed mt-4 italic">
+        <p class="text-xl md:text-2xl font-light text-gray-400 max-w-3xl leading-relaxed italic mt-4 italic">
             "Five friends. One road. No rules."
         </p>
-    </section>
+    </header>
 
-    <!-- 2. THE CORE IDEA -->
-    <section id="vision" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-20 items-center">
+    <!-- MASTER CONCEPT -->
+    <section id="concept" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-20">
             <div class="space-y-10">
-                <h2 class="text-5xl font-black uppercase italic">The <span class="dgo-text">Concept.</span></h2>
+                <h2 class="text-5xl font-black uppercase italic tracking-tighter">The <span class="dgo-text">Master Concept.</span></h2>
                 <div class="glass p-8">
-                    <p class="text-white font-bold text-xl italic mb-4">Logline</p>
-                    <p class="text-gray-400 leading-relaxed italic">
+                    <h3 class="text-white font-bold text-xl italic mb-4">Logline</h3>
+                    <p class="text-gray-400 leading-loose italic">
                         Five young friends escape Kathmandu in a rugged old Land Rover, chasing music, freedom, and unresolved emotions on a road trip to Pokhara only to discover that the journey changes them more than the destination ever could.
                     </p>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="glass p-6"><span class="dgo-text font-black text-xl italic">TRAVEL DRAMA</span><p class="text-[9px] uppercase text-gray-500 mt-2">Genre</p></div>
-                    <div class="glass p-6"><span class="dgo-text font-black text-xl italic">5 EPISODES</span><p class="text-[9px] uppercase text-gray-500 mt-2">Structure</p></div>
+                    <div class="glass p-6 text-center"><span class="dgo-text font-black text-xl italic">TRAVEL DRAMA</span><p class="text-[9px] uppercase text-gray-500 mt-1">Genre</p></div>
+                    <div class="glass p-6 text-center"><span class="dgo-text font-black text-xl italic">5 EPISODES</span><p class="text-[9px] uppercase text-gray-500 mt-1">Duration: 40m</p></div>
                 </div>
             </div>
-            <div class="space-y-8">
-                <h3 class="text-xs font-black text-gray-500 uppercase tracking-[0.4em]">Strategy & Market</h3>
+            <div class="space-y-10">
+                <h3 class="text-xs font-black text-gray-500 uppercase tracking-[0.4em]">Core Pillars</h3>
                 <div class="flex gap-6">
                     <div class="w-1.5 h-16 dgo-bg rounded-full"></div>
-                    <p class="text-sm text-gray-400 leading-relaxed"><span class="text-white font-bold">Platform Impact (DGO):</span> Launches a youth-first identity, builds original IP, and drives massive subscription engagement.</p>
+                    <div>
+                        <h4 class="text-white font-bold mb-1 italic">Tone & Style</h4>
+                        <p class="text-sm text-gray-500 italic">Raw cinematic realism mixed with music-video aesthetics. Warm tones, dusty highways, and neon nights.</p>
+                    </div>
                 </div>
                 <div class="flex gap-6">
                     <div class="w-1.5 h-16 dgo-bg rounded-full"></div>
-                    <p class="text-sm text-gray-400 leading-relaxed"><span class="text-white font-bold">Virality:</span> Song-first marketing, influencer collaborations, and aesthetic storytelling engineered for TikTok/Reels.</p>
+                    <div>
+                        <h4 class="text-white font-bold mb-1 italic">DGO Platform Impact</h4>
+                        <p class="text-sm text-gray-500 italic">Launches a youth-first identity, builds original IP, and drives massive subscription engagement.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. CHARACTERS & CAST -->
-    <section id="characters" class="py-32 bg-white/[0.02]">
+    <!-- CHARACTERS -->
+    <section id="characters" class="py-32 bg-white/[0.01]">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-center text-4xl font-black mb-16 italic uppercase tracking-widest">The <span class="dgo-text">Cast & Archetypes.</span></h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="glass p-8 hover:border-pink-500/50 transition">
-                    <h4 class="text-xl font-black mb-2 dgo-text italic">Sushant</h4>
-                    <p class="text-[9px] uppercase text-gray-500 mb-4 tracking-widest">The Protagonist</p>
-                    <p class="text-xs text-gray-400 leading-relaxed italic">Musician, layered, owner of the Land Rover. Struggling between legacy and freedom.</p>
+            <h2 class="text-center text-4xl font-black mb-16 italic uppercase tracking-widest italic underline decoration-pink-500/20 underline-offset-8">Main <span class="dgo-text">Characters.</span></h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass p-8">
+                    <h4 class="text-xl font-black mb-1 dgo-text italic">Sushant</h4>
+                    <p class="text-xs text-gray-400 italic leading-relaxed">Musician, layered guitarist. Struggles between family stability and artistic freedom.</p>
                 </div>
-                <div class="glass p-8 hover:border-pink-500/50 transition">
-                    <h4 class="text-xl font-black mb-2 dgo-text italic">Mona</h4>
-                    <p class="text-[9px] uppercase text-gray-500 mb-4 tracking-widest">Magnetic Chaos</p>
-                    <p class="text-xs text-gray-400 leading-relaxed italic">Bold, unapologetic, lives in the moment. Sensual energy, emotional unpredictability.</p>
+                <div class="glass p-8">
+                    <h4 class="text-xl font-black mb-1 dgo-text italic">Mona</h4>
+                    <p class="text-xs text-gray-400 italic leading-relaxed">Bold, sensual energy. Represents chaos, freedom, and emotional unpredictability.</p>
                 </div>
-                <div class="glass p-8 hover:border-pink-500/50 transition">
-                    <h4 class="text-xl font-black mb-2 dgo-text italic">Sushil</h4>
-                    <p class="text-[9px] uppercase text-gray-500 mb-4 tracking-widest">The Survivalist</p>
-                    <p class="text-xs text-gray-400 leading-relaxed italic">DIY fixer, grounded, fearless. Represents raw masculinity and loyalty.</p>
+                <div class="glass p-8">
+                    <h4 class="text-xl font-black mb-1 dgo-text italic">Sushil</h4>
+                    <p class="text-xs text-gray-400 italic leading-relaxed">DIY survivalist, protector. Represents raw masculinity, fearlessness, and loyalty.</p>
                 </div>
-                <div class="glass p-8 hover:border-pink-500/50 transition">
-                    <h4 class="text-xl font-black mb-2 dgo-text italic">Divya</h4>
-                    <p class="text-[9px] uppercase text-gray-500 mb-4 tracking-widest">The Mysterious Traveler</p>
-                    <p class="text-xs text-gray-400 leading-relaxed italic">Solo traveler, outsider. Brings fresh perspective and emotional disruption.</p>
+                <div class="glass p-8">
+                    <h4 class="text-xl font-black mb-1 dgo-text italic">Manav</h4>
+                    <p class="text-xs text-gray-400 italic leading-relaxed">Lead vocalist in Pokhara. Emotionally distant, waiting for reconciliation.</p>
+                </div>
+                <div class="glass p-8">
+                    <h4 class="text-xl font-black mb-1 dgo-text italic">Divya</h4>
+                    <p class="text-xs text-gray-400 italic leading-relaxed">Mysterious solo traveler. Brings fresh perspective and emotional disruption.</p>
                 </div>
             </div>
-            <div class="mt-12 text-center text-gray-500 text-[10px] uppercase tracking-[0.4em]">
-                Potential Cast: Sushant Ghimire • Anna Sharma • Najir Hussain • Saugat Malla
-            </div>
+            <p class="mt-12 text-center text-gray-500 text-[10px] font-bold uppercase tracking-[0.4em] italic">
+                Potential Cast: Sushant Ghimire • Anna Sharma • Najir Hussain • Saugat Malla • Wangden
+            </p>
         </div>
     </section>
 
-    <!-- 4. MOOD BOARD (SLIDE MODEL) -->
+    <!-- MOOD BOARD: STARTS FROM MOOD 1 -->
     <section id="vibe" class="py-24">
         <div class="text-center mb-10">
-            <h2 class="text-4xl font-black uppercase italic tracking-widest">Visual <span class="dgo-text">Mood Board.</span></h2>
-            <p class="text-gray-600 text-[10px] mt-4 uppercase tracking-[0.4em]">Cinematic Realism • Warm Tones • Neon Nights</p>
+            <h2 class="text-4xl font-black uppercase italic tracking-widest italic">Visual <span class="dgo-text">Mood Board.</span></h2>
+            <p class="text-gray-600 text-[10px] mt-4 uppercase tracking-[0.4em]">Swipe to Zoom into the Vibe</p>
         </div>
 
         <div class="swiper mySwiper">
@@ -158,46 +171,46 @@
         </div>
     </section>
 
-    <!-- 5. STORY ARC -->
-    <section id="arc" class="py-32 px-6 max-w-7xl mx-auto">
-        <h2 class="text-center text-5xl font-black mb-24 italic uppercase tracking-widest">Story <span class="dgo-text">Arc.</span></h2>
-        <div class="space-y-10">
-            <div class="glass p-10 flex flex-col md:flex-row gap-10 items-center">
-                <div class="dgo-text text-5xl font-black italic">01</div>
+    <!-- STORY ARC -->
+    <section id="episodes" class="py-32 px-6 max-w-5xl mx-auto">
+        <h2 class="text-center text-4xl font-black mb-20 italic uppercase tracking-widest italic underline decoration-pink-500/20 underline-offset-8">Episode <span class="dgo-text">Breakdown.</span></h2>
+        <div class="space-y-12">
+            <div class="glass p-10 flex gap-8 items-center border-l-4 border-l-purple-500">
+                <span class="text-5xl font-black dgo-text italic">01</span>
                 <div>
-                    <h4 class="text-2xl font-black mb-2 italic">Departure</h4>
-                    <p class="text-gray-500 text-sm italic leading-relaxed">Kathmandu life, band tensions, emotional cracks. The trip begins. Song 1: Travel Anthem.</p>
+                    <h4 class="text-xl font-bold italic mb-1 uppercase tracking-tighter">Departure</h4>
+                    <p class="text-xs text-gray-500 italic">Band tensions & emotional cracks. The journey begins. Song 1: Travel anthem (viral hook).</p>
                 </div>
             </div>
-            <div class="glass p-10 flex flex-col md:flex-row gap-10 items-center border-pink-500/20">
-                <div class="dgo-text text-5xl font-black italic">03</div>
+            <div class="glass p-10 flex gap-8 items-center border-l-4 border-l-pink-500">
+                <span class="text-5xl font-black dgo-text italic">03</span>
                 <div>
-                    <h4 class="text-2xl font-black mb-2 italic">Chaos & Intimacy</h4>
-                    <p class="text-gray-500 text-sm italic leading-relaxed">Tensions rise, jealousy, attraction. Raw Nepal experience. Song 3: Romantic Track.</p>
+                    <h4 class="text-xl font-bold italic mb-1 uppercase tracking-tighter">Chaos & Intimacy</h4>
+                    <p class="text-xs text-gray-500 italic">Tensions rise. Village interactions, raw experience. Song 3: Emotional / romantic track.</p>
                 </div>
             </div>
-            <div class="glass p-10 flex flex-col md:flex-row gap-10 items-center">
-                <div class="dgo-text text-5xl font-black italic">05</div>
+            <div class="glass p-10 flex gap-8 items-center border-l-4 border-l-red-500">
+                <span class="text-5xl font-black dgo-text italic">05</span>
                 <div>
-                    <h4 class="text-2xl font-black mb-2 italic">The Night</h4>
-                    <p class="text-gray-500 text-sm italic leading-relaxed">Trance party climax. Performance resolution. Open-ended emotional closure. Song 5: High-Energy Finale.</p>
+                    <h4 class="text-xl font-bold italic mb-1 uppercase tracking-tighter">The Night</h4>
+                    <p class="text-xs text-gray-500 italic">Trance party climax. Performance resolution. Open-ended emotional closure. Song 5: High-energy finale.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. MARKET ROI -->
-    <section id="market" class="py-32 bg-white/[0.02] px-6">
-        <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-4xl font-black mb-16 italic uppercase tracking-tighter">Business <span class="dgo-text">Potential.</span></h2>
-            <div class="grid md:grid-cols-2 gap-10 text-left">
-                <div class="glass p-10 border-white/5">
-                    <h5 class="text-white font-black mb-4 uppercase text-[10px] tracking-widest opacity-50 italic underline decoration-pink-500 underline-offset-8">Music Strategy</h5>
-                    <p class="text-gray-400 text-sm leading-relaxed italic">5 Original songs designed for viral reach. Indie + Acoustic + EDM fusion. Song-first marketing builds a lasting legacy beyond the screen.</p>
+    <!-- STRATEGY -->
+    <section id="strategy" class="py-32 bg-white/[0.02] px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-center text-4xl font-black mb-20 italic uppercase tracking-widest italic">Virality <span class="dgo-text">& ROI.</span></h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="glass p-10">
+                    <h4 class="text-white font-bold mb-4 italic uppercase tracking-widest text-xs">Music Strategy</h4>
+                    <p class="text-gray-500 text-sm italic leading-relaxed">5 Original songs designed for viral reach across TikTok/Reels. Indie + Acoustic + EDM fusion branding.</p>
                 </div>
-                <div class="glass p-10 border-white/5">
-                    <h5 class="text-white font-black mb-4 uppercase text-[10px] tracking-widest opacity-50 italic underline decoration-pink-500 underline-offset-8">Target ROI</h5>
-                    <p class="text-gray-400 text-sm leading-relaxed italic">High relatability for Gen Z audience in Nepal and diaspora. Drives platform subscriptions and high-retention original IP.</p>
+                <div class="glass p-10">
+                    <h4 class="text-white font-bold mb-4 italic uppercase tracking-widest text-xs">Target ROI</h4>
+                    <p class="text-gray-500 text-sm italic leading-relaxed">High relatability for Gen Z audience. Drives massive platform subscription growth through original IP.</p>
                 </div>
             </div>
         </div>
@@ -205,28 +218,34 @@
 
     <!-- FOOTER -->
     <footer class="py-40 px-6 text-center border-t border-white/5 bg-black">
-        <img src="logo.png" alt="DGO Logo" class="h-10 mx-auto mb-10 opacity-30">
-        <h2 class="text-5xl md:text-8xl font-black mb-10 italic uppercase tracking-tighter opacity-80 italic">Sarara... LIFE.</h2>
-        <div class="inline-block border border-white/10 px-12 py-5 rounded-full text-[9px] font-black uppercase tracking-[0.6em] text-gray-600 italic">
+        <img src="logo.png" alt="DGO Logo" class="h-12 mx-auto mb-10 opacity-30">
+        
+        <!-- BOLD STATEMENT IN DGO GRADIENT -->
+        <div class="mb-12">
+            <h2 class="text-6xl md:text-9xl font-black italic uppercase tracking-tighter dgo-text leading-[1.3] py-4">ROAD IS READY.</h2>
+        </div>
+
+        <div class="inline-block border border-white/10 px-12 py-5 rounded-full text-[9px] font-bold uppercase tracking-[0.5em] text-gray-500 italic mb-20">
             Life doesn’t wait. Why should you?
         </div>
-        <p class="mt-32 text-[8px] uppercase tracking-[0.6em] text-gray-800 font-black">© 2024 DGO ORIGINALS • RAEELA FILMS</p>
+        
+        <p class="mt-20 text-[8px] uppercase tracking-[0.6em] text-gray-800 font-black italic">© 2024 DGO ORIGINALS • RAEELA FILMS</p>
     </footer>
 
-    <!-- SLIDER LOGIC -->
+    <!-- SLIDER LOGIC - FIXED START AT 1 -->
     <script>
         var swiper = new Swiper(".mySwiper", {
             effect: "coverflow",
             grabCursor: true, centeredSlides: true,
             slidesPerView: "auto",
-            initialSlide: 0, // Starts at Mood1.jpg
+            initialSlide: 0, // FORCES START AT MOOD 1
+            loop: false, 
             coverflowEffect: {
                 rotate: 20, stretch: 0, depth: 100,
                 modifier: 1, slideShadows: false,
             },
-            pagination: { el: ".swiper-pagination" },
-            loop: true,
-            autoplay: { delay: 4000, disableOnInteraction: false },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            autoplay: { delay: 4000, disableOnInteraction: true },
         });
     </script>
 </body>
