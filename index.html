@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DGO x RAEELA | SARARA... LIFE Strategic Pitch</title>
+    <title>DGO x RAEELA | SARARA... LIFE Strategic Bible</title>
     
-    <!-- Professional Styling -->
+    <!-- Scripts & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
-    
-    <!-- Slider System (Swiper.js) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -31,30 +29,23 @@
 
         .hero-title { font-size: clamp(3rem, 12vw, 8.5rem); font-weight: 900; padding: 40px 0; letter-spacing: -0.02em; text-transform: uppercase; }
 
-        /* LARGE ZOOMABLE MOOD BOARD */
-        .swiper { width: 100%; padding: 80px 0 120px 0; }
-        .swiper-slide { 
-            width: 75vw; /* Large format */
-            height: 65vh; 
-            border-radius: 40px; 
-            overflow: hidden; 
-            border: 1px solid rgba(255,255,255,0.1); 
-            filter: brightness(0.35); 
-            transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1); 
-            cursor: zoom-in;
-        }
-        @media (max-width: 768px) { .swiper-slide { width: 92vw; height: 45vh; } }
-        .swiper-slide-active { filter: brightness(1); transform: scale(1.05); border-color: #EC4899; box-shadow: 0 0 100px rgba(236, 72, 153, 0.35); }
+        /* LARGE MOOD BOARD */
+        .swiper { width: 100%; padding: 60px 0 100px 0; }
+        .swiper-slide { width: 75vw; height: 65vh; border-radius: 40px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); filter: brightness(0.35); transition: 0.8s; cursor: zoom-in; }
+        @media (max-width: 768px) { .swiper-slide { width: 90vw; height: 45vh; } }
+        .swiper-slide-active { filter: brightness(1); transform: scale(1.05); border-color: #EC4899; box-shadow: 0 0 80px rgba(236, 72, 153, 0.3); }
         .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* ZOOM MODAL (Lightbox) */
+        /* ZOOM LIGHTBOX */
         #zoom-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
-        #zoom-modal img { max-width: 95%; max-height: 95%; border-radius: 16px; border: 1px solid #EC4899; box-shadow: 0 0 80px rgba(236, 72, 153, 0.4); }
-        .close-zoom { position: absolute; top: 30px; right: 40px; font-size: 45px; cursor: pointer; color: #fff; font-weight: bold; }
+        #zoom-modal img { max-width: 95%; max-height: 95%; border-radius: 16px; border: 1px solid #EC4899; }
+
+        /* CHARACTER BUTTONS */
+        .cast-btn { padding: 12px 24px; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.2em; transition: 0.4s; }
+        .cast-btn.active { background: var(--dgo-grad); border: none; color: white; transform: scale(1.1); box-shadow: 0 10px 20px rgba(236, 72, 153, 0.3); }
 
         /* GANTT CHART */
         .gantt-grid { display: grid; grid-template-columns: 160px repeat(10, 1fr); gap: 4px; }
-        .gantt-label { font-size: 10px; color: #777; text-transform: uppercase; padding: 12px; }
         .gantt-bar { height: 40px; border-radius: 8px; display: flex; align-items: center; padding-left: 15px; font-size: 10px; font-weight: bold; }
     </style>
 </head>
@@ -62,36 +53,35 @@
 
     <div class="watermark-bg"></div>
 
-    <!-- ZOOM LIGHTBOX -->
-    <div id="zoom-modal" onclick="closeZoom()">
-        <span class="close-zoom">&times;</span>
-        <img id="zoom-img" src="" alt="Zoomed Mood">
+    <!-- ZOOM MODAL -->
+    <div id="zoom-modal" onclick="this.style.display='none'">
+        <img id="zoom-img" src="">
     </div>
 
-    <!-- NAVBAR -->
+    <!-- NAVIGATION -->
     <nav class="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-xl border-b border-white/5 px-6 py-4 flex justify-between items-center">
         <img src="logo.png" alt="DGO" class="h-8 md:h-10">
-        <div class="hidden lg:flex space-x-10 text-[11px] font-black uppercase tracking-[0.3em] text-gray-500">
-            <a href="#vibe">Mood Board</a>
-            <a href="#timeline">Gantt Chart</a>
+        <div class="hidden lg:flex space-x-8 text-[11px] font-black uppercase tracking-[0.3em] text-gray-500">
+            <a href="#vibe">Vibe</a>
+            <a href="#cast">Cast</a>
+            <a href="#timeline">Timeline</a>
             <a href="#finance">Financials</a>
-            <a href="#impact">Strategy</a>
         </div>
-        <div class="text-[9px] font-black uppercase text-pink-500 border-l border-white/10 pl-4 italic tracking-tighter">Strategic Deck v16.0</div>
+        <div class="text-[9px] font-black uppercase text-pink-500 border-l border-white/10 pl-4">Strategic Deck v17.0</div>
     </nav>
 
     <!-- HERO -->
     <header class="min-h-screen flex flex-col items-center justify-center text-center px-6">
-        <p class="uppercase tracking-[0.8em] text-[10px] mb-2 font-black text-gray-400 italic">Official Proposal: <span class="text-white">DGO x RAEELA FILMS</span></p>
+        <p class="uppercase tracking-[0.8em] text-[10px] mb-2 font-black text-gray-400 italic">Partnership: <span class="text-white">DGO x RAEELA FILMS</span></p>
         <h1 class="hero-title dgo-text italic">SARARA... LIFE</h1>
         <p class="text-xl md:text-2xl font-light text-gray-400 mt-4 italic">"Five friends. One road. No rules."</p>
     </header>
 
-    <!-- LARGE VISUAL MOOD BOARD -->
+    <!-- VISUAL MOOD BOARD -->
     <section id="vibe" class="py-12 bg-white/[0.01]">
         <div class="text-center px-6">
-            <h2 class="text-5xl font-black mb-6 italic uppercase tracking-widest text-white underline decoration-pink-500 underline-offset-8">VISUAL <span class="dgo-text">IDENTITY.</span></h2>
-            <p class="text-gray-500 text-[10px] mt-4 uppercase tracking-[0.6em] italic">Click a slide to explore in full scale</p>
+            <h2 class="text-5xl font-black mb-6 italic uppercase tracking-tighter text-white underline decoration-pink-500 underline-offset-8">VISUAL <span class="dgo-text">IDENTITY.</span></h2>
+            <p class="text-gray-500 text-[10px] mt-4 uppercase tracking-[0.5em] italic">Click a slide to explore full-screen</p>
         </div>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -106,88 +96,69 @@
         </div>
     </section>
 
-    <!-- GANTT CHART -->
-    <section id="timeline" class="py-32 px-6 max-w-7xl mx-auto">
-        <h2 class="text-center text-4xl font-black mb-16 italic uppercase tracking-widest italic underline decoration-pink-500/20 underline-offset-8">Production <span class="dgo-text">Gantt Chart.</span></h2>
-        <div class="glass p-8 overflow-x-auto">
-            <div class="min-w-[850px]">
-                <div class="gantt-grid border-b border-white/10 mb-6">
-                    <div class="gantt-label italic">PHASE TRACKING</div>
-                    <div class="gantt-label text-center border-l border-white/5 col-span-4 italic">APRIL 2026</div>
-                    <div class="gantt-label text-center border-l border-white/5 col-span-4 italic">MAY 2026</div>
-                    <div class="gantt-label text-center border-l border-white/5 col-span-2 italic">JUNE 2026</div>
-                </div>
-                <div class="gantt-grid mb-3">
-                    <div class="text-[10px] self-center font-bold text-gray-500 italic">PRE-PROD</div>
-                    <div class="col-span-5 gantt-bar dgo-bg text-white shadow-xl shadow-purple-900/20 uppercase tracking-tighter">Script lock • Recce • casting</div>
-                </div>
-                <div class="gantt-grid mb-3">
-                    <div class="text-[10px] self-center font-bold text-gray-500 italic">PREP WEEK</div>
-                    <div class="col-start-5 col-span-1 gantt-bar bg-white/20 text-white italic">GEAR RIG</div>
-                </div>
-                <div class="gantt-grid mb-3">
-                    <div class="text-[10px] self-center font-bold text-gray-500 italic">PRODUCTION</div>
-                    <div class="col-start-6 col-span-3 gantt-bar dgo-bg text-white shadow-xl shadow-pink-900/20 uppercase tracking-tighter">Principal Photography</div>
-                </div>
-                <div class="gantt-grid mb-3">
-                    <div class="text-[10px] self-center font-bold text-gray-500 italic">DELIVERY</div>
-                    <div class="col-start-8 col-span-3 gantt-bar border border-white/20 text-pink-500 italic uppercase">Final Series Delivery</div>
-                </div>
+    <!-- INTERACTIVE CAST BIBLE -->
+    <section id="cast" class="py-32 px-6 max-w-5xl mx-auto text-center">
+        <h2 class="text-4xl font-black mb-10 italic uppercase tracking-widest text-white">CHARACTER <span class="dgo-text">BIBLE.</span></h2>
+        
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+            <button class="cast-btn active" onclick="showCast('sushant', this)">Sushant</button>
+            <button class="cast-btn" onclick="showCast('mona', this)">Mona</button>
+            <button class="cast-btn" onclick="showCast('sushil', this)">Sushil</button>
+            <button class="cast-btn" onclick="showCast('manav', this)">Manav</button>
+            <button class="cast-btn" onclick="showCast('divya', this)">Divya</button>
+        </div>
+
+        <div id="cast-display" class="glass p-12 text-left min-h-[300px] flex flex-col justify-center transition-all duration-500">
+            <h3 id="cast-name" class="text-3xl font-black dgo-text italic uppercase mb-2">SUSHANT</h3>
+            <p id="cast-role" class="text-xs uppercase font-bold text-gray-500 tracking-[0.4em] mb-6 underline decoration-pink-500 underline-offset-4">The Protagonist / Musician</p>
+            <p id="cast-desc" class="text-lg text-gray-400 leading-loose italic">Musician, guitar player, emotionally layered. Struggles between stability and artistic life. Owner of the vintage Land Rover—a symbol of legacy meeting freedom.</p>
+            <div class="mt-10 border-t border-white/10 pt-6">
+                <p class="text-[10px] uppercase font-bold text-gray-600 tracking-widest">Potential Talent:</p>
+                <p id="cast-talent" class="text-white font-black italic mt-2">Sushant Ghimire / Saugat Malla</p>
             </div>
         </div>
     </section>
 
-    <!-- FINANCIAL BREAKDOWN -->
+    <!-- PRODUCTION GANTT CHART -->
+    <section id="timeline" class="py-32 px-6 max-w-7xl mx-auto">
+        <h2 class="text-center text-4xl font-black mb-16 italic uppercase tracking-widest italic underline decoration-pink-500/20 underline-offset-8">Production <span class="dgo-text">Gantt Chart.</span></h2>
+        <div class="glass p-8 overflow-x-auto">
+            <div class="min-w-[850px]">
+                <div class="gantt-grid border-b border-white/10 mb-6 italic text-[10px] text-gray-600">
+                    <div class="p-3">PHASES</div><div class="col-span-4 text-center p-3 border-l border-white/5">APRIL 2026</div><div class="col-span-4 text-center p-3 border-l border-white/5">MAY 2026</div><div class="col-span-2 text-center p-3 border-l border-white/5">JUNE 2026</div>
+                </div>
+                <div class="gantt-grid mb-3"><div class="self-center font-black text-gray-500 italic text-[10px]">PRE-PRODUCTION</div><div class="col-span-5 gantt-bar dgo-bg text-white shadow-xl shadow-purple-900/20 uppercase tracking-tighter">Script • Recce • casting</div></div>
+                <div class="gantt-grid mb-3"><div class="self-center font-black text-gray-500 italic text-[10px]">PRODUCTION</div><div class="col-start-6 col-span-3 gantt-bar dgo-bg text-white shadow-xl shadow-pink-900/20 uppercase tracking-tighter">Principal Shoot</div></div>
+                <div class="gantt-grid mb-3"><div class="self-center font-black text-gray-500 italic text-[10px]">MASTERS DELIVERY</div><div class="col-start-8 col-span-3 gantt-bar border border-white/20 text-pink-500 italic uppercase">Final Delivery</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINANCIAL MODEL -->
     <section id="finance" class="py-32 bg-white/[0.01] px-6">
         <div class="max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-                <div>
-                    <h2 class="text-6xl font-black italic uppercase tracking-tighter">Budget <span class="dgo-text">Analytics.</span></h2>
-                    <p class="text-gray-500 italic text-sm mt-3 uppercase tracking-[0.3em]">Combined Investment: NPR 40,00,000</p>
-                </div>
-                <div class="glass px-12 py-8 border-pink-500/40">
-                    <span class="text-4xl font-black italic dgo-text tracking-tighter">NPR 40.0L</span>
-                </div>
+                <div><h2 class="text-6xl font-black italic uppercase tracking-tighter">Budget <span class="dgo-text">Analytics.</span></h2><p class="text-gray-500 italic text-sm mt-3 uppercase tracking-[0.3em]">Combined Investment: NPR 40,00,000</p></div>
+                <div class="glass px-12 py-8 border-pink-500/40"><span class="text-4xl font-black italic dgo-text tracking-tighter">NPR 40.0L</span></div>
             </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
                 <div class="glass p-10">
                     <div class="flex justify-between items-start mb-8"><h5 class="text-xs font-black text-gray-400 uppercase">Logistics & Road</h5><span class="text-white font-black italic text-xl">37.5%</span></div>
                     <h3 class="text-3xl font-black mb-4">15,00,000</h3>
                     <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden"><div class="w-[37.5%] h-full dgo-bg"></div></div>
-                    <p class="text-[10px] text-gray-500 mt-5 italic leading-loose">Travel, Highway Logistics, On-road Scouting, and Crew Catering.</p>
+                    <p class="text-[10px] text-gray-500 mt-5 italic leading-loose">Travel, Highway Logistics, Scouting, and Crew Catering.</p>
                 </div>
                 <div class="glass p-10">
-                    <div class="flex justify-between items-start mb-8"><h5 class="text-xs font-black text-gray-400 uppercase">Direction & Talent</h5><span class="text-white font-black italic text-xl">25%</span></div>
+                    <div class="flex justify-between items-start mb-8"><h5 class="text-xs font-black text-gray-400 uppercase">Production Tech</h5><span class="text-white font-black italic text-xl">25%</span></div>
                     <h3 class="text-3xl font-black mb-4">10,00,000</h3>
                     <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden"><div class="w-[25%] h-full dgo-bg"></div></div>
-                    <p class="text-[10px] text-gray-500 mt-5 italic leading-loose">Personnel, Core Direction Staff, and Lead Actor Compensation.</p>
+                    <p class="text-[10px] text-gray-500 mt-5 italic leading-loose">Drones, Specialty Car Rigging, High-end Kits, and Post-Production.</p>
                 </div>
                 <div class="glass p-10">
-                    <div class="flex justify-between items-start mb-8"><h5 class="text-xs font-black text-gray-400 uppercase">Production Tech</h5><span class="text-white font-black italic text-xl">12.5%</span></div>
-                    <h3 class="text-3xl font-black mb-4">5,00,000</h3>
-                    <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden"><div class="w-[12.5%] h-full dgo-bg"></div></div>
-                    <p class="text-[10px] text-gray-500 mt-5 italic leading-loose">Drones, Specialty Car Rigging, High-end Kits, and Lighting.</p>
-                </div>
-                <div class="glass p-10">
-                    <div class="flex justify-between items-start mb-8"><h5 class="text-xs font-black text-gray-400 uppercase">Post-Processing</h5><span class="text-white font-black italic text-xl">12.5%</span></div>
-                    <h3 class="text-3xl font-black mb-4">5,00,000</h3>
-                    <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden"><div class="w-[12.5%] h-full dgo-bg"></div></div>
-                    <p class="text-[10px] text-gray-500 mt-5 italic leading-loose">Color Grading, Final Polish, Sound Mixing, and BGM Mastering.</p>
-                </div>
-                <div class="glass p-10">
-                    <div class="flex justify-between items-start mb-8"><h5 class="text-xs font-black text-gray-400 uppercase">Music Ecosystem</h5><span class="text-white font-black italic text-xl">12.5%</span></div>
-                    <h3 class="text-3xl font-black mb-4">5,00,000</h3>
-                    <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden"><div class="w-[12.5%] h-full dgo-bg"></div></div>
-                    <p class="text-[10px] text-gray-500 mt-5 italic leading-loose">Original OST Recording Session, Mixing, and Asset Rights.</p>
-                </div>
-            </div>
-
-            <div class="mt-24">
-                <div class="grid md:grid-cols-3 gap-1">
-                    <div class="glass p-12 text-center rounded-r-none border-r-white/5"><span class="text-[10px] text-gray-500 uppercase block mb-3 font-bold">Advance (40%)</span><h5 class="text-3xl font-black italic">16,00,000</h5></div>
-                    <div class="glass p-12 text-center rounded-none border-x-0 bg-pink-500/5"><span class="text-[10px] text-pink-500 uppercase block mb-3 font-bold italic">Shoot Goal (40%)</span><h5 class="text-3xl font-black italic text-white">16,00,000</h5></div>
-                    <div class="glass p-12 text-center rounded-l-none border-l-white/5"><span class="text-[10px] text-gray-500 uppercase block mb-3 font-bold">Closing (20%)</span><h5 class="text-3xl font-black italic">8,00,000</h5></div>
+                    <div class="flex justify-between items-start mb-8"><h5 class="text-xs font-black text-gray-400 uppercase">Talent & Music</h5><span class="text-white font-black italic text-xl">37.5%</span></div>
+                    <h3 class="text-3xl font-black mb-4">15,00,000</h3>
+                    <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden"><div class="w-[37.5%] h-full dgo-bg"></div></div>
+                    <p class="text-[10px] text-gray-500 mt-5 italic leading-loose">Actor Compensation, Music Rights, and OST Studio Sessions.</p>
                 </div>
             </div>
         </div>
@@ -198,35 +169,33 @@
         <img src="logo.png" alt="DGO Logo" class="h-10 mx-auto mb-16 opacity-40">
         <h2 class="text-6xl md:text-[10rem] font-black italic uppercase tracking-tighter dgo-text leading-[1.6] py-10 mb-20">ROAD IS READY.</h2>
         <div class="inline-block border border-white/10 px-14 py-6 rounded-full text-[11px] font-black uppercase tracking-[0.7em] text-gray-600 italic">Life doesn’t wait. Why should you?</div>
-        <p class="mt-48 text-[8px] uppercase tracking-[0.8em] text-gray-800 font-black italic underline decoration-gray-900 underline-offset-8">© 2024 DGO ORIGINALS • RAEELA FILMS</p>
+        <p class="mt-48 text-[8px] uppercase tracking-[0.8em] text-gray-800 font-black italic">© 2024 DGO ORIGINALS • RAEELA FILMS</p>
     </footer>
 
-    <!-- INTERACTIVE LOGIC -->
     <script>
-        // Mood Board Slider Configuration
-        var swiper = new Swiper(".mySwiper", {
-            effect: "coverflow",
-            grabCursor: true, centeredSlides: true,
-            slidesPerView: "auto", initialSlide: 0, loop: false, 
-            coverflowEffect: { rotate: 0, stretch: 20, depth: 150, modifier: 1, slideShadows: false },
-            pagination: { el: ".swiper-pagination", clickable: true },
-            autoplay: { delay: 5000, disableOnInteraction: true },
-        });
+        // Cast Data Object
+        const castData = {
+            sushant: { name: "SUSHANT", role: "The Protagonist / Musician", desc: "Musician, guitar player, emotionally layered. Struggles between stability and artistic life. Owner of the vintage Land Rover—a symbol of legacy meeting freedom.", talent: "Sushant Ghimire / Saugat Malla" },
+            mona: { name: "MONA", role: "Magnetic Chaos / Sensual Lead", desc: "Bold, unapologetic, lives in the moment. Sensual energy and emotional unpredictability. Represents pure freedom and the catalyst of group friction.", talent: "Anna Sharma / Surakshya Panta" },
+            sushil: { name: "SUSHIL", role: "The Survivalist / Fixer", desc: "DIY survivalist, protector of the group. Grounded, fearless, and instinct-driven. Represents raw masculinity and unwavering loyalty.", talent: "Najir Hussain / Saugat Malla" },
+            manav: { name: "MANAV", role: "The Pokhara Link / Vocalist", desc: "Lead vocalist of the band. Emotionally distant, waiting for reconciliation. Runs a small lakeside café—represents unfinished business from the past.", talent: "Wangden / Prajinax" },
+            divya: { name: "DIVYA", role: "The Mysterious Traveler", desc: "Mysterious outsider and solo traveler. Brings a fresh perspective and emotional disruption. Connects deeply with Sushant during the journey.", talent: "New Talent / Fresh Faces" }
+        };
 
-        // Full Scale Zoom Modal Logic
-        const modal = document.getElementById("zoom-modal");
-        const zoomImg = document.getElementById("zoom-img");
-
-        function openZoom(src) {
-            modal.style.display = "flex";
-            zoomImg.src = src;
-            document.body.style.overflow = "hidden"; // Stop scrolling while zooming
+        function showCast(id, btn) {
+            document.querySelectorAll('.cast-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const data = castData[id];
+            document.getElementById('cast-name').innerText = data.name;
+            document.getElementById('cast-role').innerText = data.role;
+            document.getElementById('cast-desc').innerText = data.desc;
+            document.getElementById('cast-talent').innerText = data.talent;
         }
 
-        function closeZoom() {
-            modal.style.display = "none";
-            document.body.style.overflow = "auto"; // Resume scrolling
-        }
+        // Swiper & Zoom
+        var swiper = new Swiper(".mySwiper", { effect: "coverflow", grabCursor: true, centeredSlides: true, slidesPerView: "auto", initialSlide: 0, loop: false, coverflowEffect: { rotate: 0, stretch: 20, depth: 150, modifier: 1, slideShadows: false }, pagination: { el: ".swiper-pagination", clickable: true }, autoplay: { delay: 5000, disableOnInteraction: true } });
+        function openZoom(s) { document.getElementById("zoom-modal").style.display = "flex"; document.getElementById("zoom-img").src = s; document.body.style.overflow = "hidden"; }
+        window.onclick = function(e) { if(e.target == document.getElementById("zoom-modal")) { document.getElementById("zoom-modal").style.display = "none"; document.body.style.overflow = "auto"; } }
     </script>
 </body>
 </html>
